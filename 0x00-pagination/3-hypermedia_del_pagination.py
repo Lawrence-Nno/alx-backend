@@ -41,3 +41,11 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         pass
+
+
+    return {
+            "index": index,
+            "next_index": i,
+            "page_size": page_size,
+            "data": d
+        }
