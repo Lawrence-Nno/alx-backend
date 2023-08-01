@@ -1,5 +1,5 @@
-!/usr/bin/env python3
-""" Route for the API """
+#!/usr/bin/env python3
+""" Route module for the API """
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -8,7 +8,7 @@ babel = Babel(app)
 
 
 class Config(object):
-    """ Provied languages class """
+    """ Available Languages """
     LANGUAGES = ['en', 'fr']
     # these are the inherent defaults just btw
     BABEL_DEFAULT_LOCALE = 'en'
@@ -30,7 +30,7 @@ def index() -> str:
 
 @babel.localeselector
 def get_locale() -> str:
-    """ Determines best match for supported languages """
+    """ This func determines best match for supported languages """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
